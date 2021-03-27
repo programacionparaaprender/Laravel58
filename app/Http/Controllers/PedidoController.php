@@ -42,6 +42,11 @@ class PedidoController extends Controller {
             $lineas = Linea::all()->where('idpedido', $pedido->id);
             $productos = array();
             $total = 0;
+
+            $name = $user->nombre;
+            $email = $user->cantidad;
+            $usuario = array('name' => $name, 'email' => $email);
+
             foreach($lineas as $linea){
                 $libro = Libro::find($linea->idlibro);
                 $id = $libro->id;
@@ -54,7 +59,7 @@ class PedidoController extends Controller {
                 
             }
             $pdf = App::make('dompdf.wrapper');
-            $pdf->loadView('pdf.factura',['user'=>$user,'pedido'=>$pedido,'productos'=>$productos]);
+            $pdf->loadView('pdf.factura',['user'=>$usuario,'pedido'=>$pedido,'productos'=>$productos]);
             //return $pdf->stream();
             return $pdf->download('archivo.pdf');
         }else 
