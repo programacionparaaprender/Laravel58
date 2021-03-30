@@ -35,6 +35,7 @@ Route::get('/post/eliminar/{id}', 'PostController@eliminar');
 Route::get('pedidos/', 'PedidoController@getIndex');
 Route::get('/pedidos/compra', 'PedidoController@getCompra');
 Route::get('/pedidos/factura/{id}', 'PedidoController@getFactura');
+Route::get('/pedidos/factura2/{id}', 'PedidoController@getFactura2');
 /* Route::controllers([
     'validacion' => 'Validacion\ValidacionController',
     'validado/representante' => 'RepresentanteController',

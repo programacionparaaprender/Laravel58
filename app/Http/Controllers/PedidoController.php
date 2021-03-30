@@ -59,9 +59,39 @@ class PedidoController extends Controller {
                 
             }
             $pdf = App::make('dompdf.wrapper');
-            $pdf->loadView('pdf.factura',['user'=>$usuario,'pedido'=>$pedido,'productos'=>$productos]);
-            //return $pdf->stream();
-            return $pdf->download('archivo.pdf');
+            $pdf->loadView('pdf.factura',['user'=>$user,'pedido'=>$pedido,'productos'=>$productos]);
+            return $pdf->stream();
+            //return $pdf->download('archivo.pdf');
+        }else 
+            return view('welcome');
+
+	}
+
+    public function getFactura2($id){
+        if(Auth::user()){
+            $pedido = Pedido::find($id);
+            $user = User::find($pedido->idusers);
+            $lineas = Linea::all()->where('idpedido', $pedido->id);
+            $productos = array();
+            $total = 0;
+
+            $name = $user->nombre;
+            $email = $user->cantidad;
+            $usuario = array('name' => $name, 'email' => $email);
+
+            foreach($lineas as $linea){
+                $libro = Libro::find($linea->idlibro);
+                $id = $libro->id;
+                $name = $libro->nombre;
+                $qty = $linea->cantidad;
+                $price = $libro->precio;
+                $total = $price * $qty;
+                $producto = array('id' => $id, 'name' => $name, 'qty' => $qty, 'price' => $price, 'total' => $total);
+                array_push ( $productos, $producto );
+                
+            }
+            return view('pdf.factura',['user'=>$user,'pedido'=>$pedido,'productos'=>$productos]);
+            
         }else 
             return view('welcome');
 

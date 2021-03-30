@@ -39,9 +39,9 @@
                 @endif
           </div>
           
-          <h2 class="name">Usuario: {!! $user['name']  !!} {!!$user['email']  !!}</h2>
-          <div class="address">Dirección: {!! $user['email'] !!}</div>
-          <div class="email">email: <a href="mailto:john@example.com"> {!! $user['email'] !!}</a></div>
+          <h2 class="name">Usuario: {!! $user->name  !!} {!!$user->email  !!}</h2>
+          <div class="address">Dirección: {!! $user->email !!}</div>
+          <div class="email">email: <a href="mailto:john@example.com"> {!! $user->email !!}</a></div>
         </div>
       </div>
     </header>

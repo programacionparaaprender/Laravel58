@@ -70,6 +70,13 @@
                     target="_blank">
                     Visualizar Factura
                   </a>
+                  <a 
+                    href="{{url('pedidos/factura2',[$pedido->id])}}" 
+                    class="btn btn-info" 
+                    role="button" 
+                    target="_blank">
+                    Visualizar Nueva
+                  </a>
                 </div>
                 </td>
           </div>

@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
         EditorialWeb\User::create([
             'name' => 'Luis Correa',
             'email' => 'alberto13711@gmail.com',
-            'password' => bcrypt('sddadsada'),
+            'password' => bcrypt('dgsgddsgdsdgd'),
             'estado' => 1
         ]);
     }
