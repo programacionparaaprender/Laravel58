@@ -33,7 +33,7 @@
         </form>
 @else
 <div class="alert alert-danger">
-    <p>Al parecer aun no has elegido ningun libro para comprar.</p>
+    <p>Al parecer aun no has elegido ningun producto para comprar.</p>
 </div>
 @endif
 </div>

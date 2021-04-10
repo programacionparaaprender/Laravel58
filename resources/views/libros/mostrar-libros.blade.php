@@ -116,7 +116,7 @@
                     <form action="carrito/destruir/@{{ libro.id }}" method="GET">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" required>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a type="button" href="libros/actualizar/@{{ libro.id }}" class="btn btn-primary" role="button">Editar libro</a>
+                            <a type="button" href="libros/actualizar/@{{ libro.id }}" class="btn btn-primary" role="button">Actualizar</a>
                             <input class="btn btn-danger" role="button" type="submit" value="Eliminar"/>
                         </div>
                     </form>
