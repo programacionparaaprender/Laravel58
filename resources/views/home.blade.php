@@ -1,6 +1,8 @@
 @extends('app')
 
 @section('content')
+<div style="display:block;width:100%;height:5rem;">
+		</div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

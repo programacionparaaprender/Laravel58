@@ -35,7 +35,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call(UsersTableSeeder::class);
 		factory(EditorialWeb\User::class, 10)->create();
 		factory(EditorialWeb\Post::class, 50)->create();
-
+		
+		$this->call(CategoriaSeeder::class);
+		
 		$this->call(NivelesSeeder::class);
 		$this->call(TipoEdicionesSeeder::class);
 		$this->call(AutoresSeeder::class);

@@ -19,6 +19,8 @@ class Kernel extends HttpKernel
         \EditorialWeb\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \EditorialWeb\Http\Middleware\TrustProxies::class,
+        //\EditorialWeb\Http\Middleware\CheckCors::class,
+        //\Fruitcake\Cors\HandleCors::class,
     ];
 
     /**

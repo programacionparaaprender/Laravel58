@@ -6,9 +6,11 @@
 	    <div style="display:block;width:100%;height:5rem;">
 		</div>
 		<div class="card card-default" style="width:30rem;height:10rem;padding:5rem;margin:auto; text-align:center">
-				<h3>¡ Bienvenido a nuestra aplicación web !</h3>
-			
-			
+			@if (Auth::guest())
+				<h3>Bienvenido a nuestra aplicación web !</h3>
+            @elseif(Auth::user()->estado<3)     
+				<h3>Bienvenido {{ Auth::user()->name }} a nuestra aplicación web !</h3>
+			@endif
 	    </div>
 		<div class="card card-default" style="width:30rem;height:10rem;padding:5rem;margin:auto; text-align:center">
 			<div id="post-stream">

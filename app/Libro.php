@@ -15,7 +15,7 @@ class Libro extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['id', 'nombre', 'año','idgenero','idtipoed','cantpagina','edicion','idnivel','descripcion','cantidad','ruta','precio'];
+	protected $fillable = ['id', 'nombre','descripcion','cantidad','ruta','precio'];
 	//public function propietario()
 //	{
 //		return $this->belongsTo('GestorImagenes\Usuario');
@@ -25,7 +25,7 @@ class Libro extends Model {
 	{
 		return $this->hasMany('EditorialWeb\Linea');
 	}
-	public function libroautores()
+	/* public function libroautores()
 	{
 		return $this->hasMany('EditorialWeb\LibroAutor');
 	}
@@ -40,5 +40,5 @@ class Libro extends Model {
 	public function tipoedicion()
 	{
 		return $this->belongsTo('EditorialWeb\TipoEdicion');
-	}
+	} */
 }

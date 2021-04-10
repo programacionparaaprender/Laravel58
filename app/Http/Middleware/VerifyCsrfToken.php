@@ -20,5 +20,11 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-    ];
+    ]; 
+    /* protected $except = [
+        'api/*',
+        'sub.domain.zone' => [
+          'prefix/*'
+        ],
+    ]; */
 }

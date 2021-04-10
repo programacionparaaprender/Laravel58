@@ -177,10 +177,10 @@ return [
         EditorialWeb\Providers\RouteServiceProvider::class,
 
         //Agregando
-        //Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 	    Barryvdh\DomPDF\ServiceProvider::class,
         //Maatwebsite\Excel\ExcelServiceProvider::class, 
-        Darryldecode\Cart\CartServiceProvider::class
+        //Darryldecode\Cart\CartServiceProvider::class
 
     ],
 
@@ -234,8 +234,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         //Agregando campos nuevos
-        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
-        //'Cart'  => Gloudemans\Shoppingcart\Facades\Cart::class,
+        //'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+        'Cart'  => Gloudemans\Shoppingcart\Facades\Cart::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         //'Excel' => Maatwebsite\Excel\Facades\Excel::class, 
     ],

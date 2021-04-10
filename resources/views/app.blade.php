@@ -21,7 +21,7 @@
 		<div class="container-fluid">
 		
 			<a class="navbar-brand" href="#/">
-				<img src="images/principal.jpg" width="50" height="50" alt="">
+				<img src="{{ url('images/principal.jpg') }}" width="50" height="50" alt="">
 			</a>
 			
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuprincipal" aria-controls="menuprincipal" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
 						@if (Auth::guest())
 						<p></p>
 						@else
-						@if(Auth::user()->admin==1)
+						@if(Auth::user()->estado==1)
 						<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="{{ url('reportes/') }}">Reportes</a></li>
 						<li class="nav-item">
@@ -51,14 +51,14 @@
 						<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="{{ url('validado/registrar-empleado') }}">Registrar Empleados</a></li>
 						<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="{{ url('validado/representante/rol') }}">Roles Representante</a></li>
+						<a class="nav-link active" aria-current="page" href="{{ url('validado/representante/rol') }}">Roles de usuario</a></li>
 						<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="{{ url('carrito/') }}">Carrito</a>
 						</li>
 						<li class="nav-item">
 						<a class="nav-link" aria-current="page" href="{{ url('/post/') }}">Posts</a>
 						</li>
-						@elseif(Auth::user()->admin==0)
+						@elseif(Auth::user()->estado==0)
 						<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="{{ url('carrito/') }}">Carrito</a></li>
 						<li class="nav-item">
@@ -121,10 +121,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-5">
-				<h3>PRÓXIMOS WORKSHOPS</h3>
+				<h3>PRÓXIMOS CURSOS</h3>
 				<ul id="next-workshops">
-					<li><a href="/detail">Título del primer workshop de pruebas</a></li>
-					<li><a href="/detail">Título del segundo workshop de pruebas</a></li>
+					<li><a href="/detail">Título del primer curso</a></li>
 				</ul>
 			</div>
 			<div class="col-xs-12 col-sm-7 col-md-6 col-md-offset-1">
@@ -138,7 +137,7 @@
 							</div>
 						</div>
 						<div class="col-xs-5 col-sm-4">
-							<button class="btn btn-custom btn-lg">SUSCRIBIRME</button>
+							<button class="btn btn-secondary btn-lg">SUSCRIBIRME</button>
 						</div>
 					</div>
 				</form>

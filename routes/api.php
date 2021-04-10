@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 use EditorialWeb\User;
 use EditorialWeb\Post;
 use EditorialWeb\Pedido;
+use EditorialWeb\Libro;
+
 
 //use Auth;
 //http://localhost/LaravelApiMySQL/public/api/users/
@@ -35,6 +37,14 @@ Route::get('/pedidos', function () {
     } */
 });
 
+
+Route::get('/libros', function () {
+    /* if(Auth::user()){ */
+        return Libro::All();
+    /* }else{
+        return "No tiene permisos";
+    } */
+});
 
 Route::get('/posts', function () {
     /* if(Auth::user()){ */

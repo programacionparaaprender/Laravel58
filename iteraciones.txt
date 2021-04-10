@@ -35,7 +35,7 @@ php artisan migrate
 php artisan db:seed
 
 Iteración 1
-composer create-project laravel/laravel=5.3 LaravelApi
+composer create-project laravel/laravel=5.8 LaravelApi
 
 Iteración 2
 php artisan app:name EditorialWeb
@@ -124,6 +124,7 @@ resources/views/pedidos (las vistas)
 Agregando carrito de compras
 -------------------------
 https://laptrinhx.com/laravel-5-8-shopping-cart-2089193784/
+https://php-download.com/package/darryldecode/cart/example
 composer.json
 
 composer update
@@ -137,6 +138,11 @@ Darryldecode\Cart\CartServiceProvider::class
 'Cart' => Darryldecode\Cart\Facades\CartFacade::class
 
 php artisan vendor:publish --provider="Darryldecode\Cart\CartServiceProvider" --tag="config"
+
+
+https://github.com/bumbummen99/LaravelShoppingcart
+
+composer remove "darryldecode/cart"
 
 -----------------------
 Agregando PDF
@@ -197,24 +203,60 @@ $app->register(App\Providers\AppServiceProvider::class);
 si no dara problema con la memoria al realizar las migraciones
 
 
+
+--------------------------
+Migrando modulo de libros
+--------------------------
+cambiandolo para que funcione como un producto
+modifique la migracion, el modelo
+ahora
+
+php artisan migrate:reset
+php artisan migrate
+
+php artisan db:seed
+
+--------------------------
+Agregando categoria
+--------------------------
+php artisan make:migration --create="categorias" CrearTablaCategorias
+php artisan migrate:reset
+php artisan migrate
+composer dumpautoload
+php artisan db:seed
 ---------------------
 Probando PDF
 ---------------------
 https://styde.net/genera-pdfs-en-laravel-con-el-componente-dompdf/
 
------------------
-Habilitar cors
--------------------
-https://github.com/fruitcake/laravel-cors
-https://www.it-swarm-es.com/es/php/como-habilitar-cors-en-laravel-5.8/810632962/
-https://www.youtube.com/watch?v=DVAiEDaPR5I
+
+
+---------------------
+Errores
+--------------------------
+error al Mostrar el reporte restricción de estricto.
+https://stackoverflow.com/questions/40917189/laravel-syntax-error-or-access-violation-1055-error
+
+----------------------
+Guardar imagen en base de datos
+--------------------------------
+
+https://es.stackoverflow.com/questions/128819/como-guardar-imagen-y-varios-campos-en-la-base-de-datos-laravel-5-2
 
 -------------------
 Falta
 -------------
-Cors
----------------
-https://github.com/barryvdh/laravel-cors
+Acceder a Paypal: https://paypal.com​
+Acceder a Stripe: https://stripe.com​
+Acceder a 2checkout: https://2checkout.com​
+
+
+paypal
+https://github.com/srmklive/laravel-paypal
+https://github.com/srmklive/laravel-paypal-demo
+https://www.youtube.com/watch?v=f7a5pDLsCJU
+https://morioh.com/p/422e0221971b
+
 https://www.php.net/manual/es/timezones.america.php
 
 no recuerdo para que sirve

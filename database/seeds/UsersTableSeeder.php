@@ -11,10 +11,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        //luiscorrea13711
+        //luiscorrea1820
         EditorialWeb\User::create([
-            'name' => 'Luis Correa',
-            'email' => 'alberto13711@gmail.com',
-            'password' => bcrypt('dgsgddsgdsdgd'),
+            'name' => 'Programacion para aprender',
+            'email' => 'ejemplo@gmail.com',
+            'password' => bcrypt('dfdgsgsdfdsfds'),
             'estado' => 1
         ]);
     }
